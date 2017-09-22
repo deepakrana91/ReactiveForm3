@@ -22,9 +22,9 @@ export class AppComponent implements OnInit{
 
     this.desigArray= this.formService.title
     this.signupForm = new FormGroup({
-      'fname': new FormControl(null,Validators.required),
+      'fname': new FormControl(null,[Validators.required,Validators.pattern("^[a-zA-Z]*$")]),
       'lname': new FormControl(null,Validators.required),
-      'pnumber': new FormControl(null,Validators.required),
+      'pnumber': new FormControl(null,[Validators.required,Validators.pattern("^[0-9]*$")]),
       'prefix': new FormControl(null,Validators.required)
     })
   }
